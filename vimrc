@@ -1,9 +1,9 @@
-filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "gmarik/vundle"
+Bundle 'ctrlp.vim'
 " Installed Bundles
 Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/Lokaltog/vim-powerline.git"
@@ -31,6 +31,7 @@ Bundle "git://github.com/vim-scripts/L9.git"
 Bundle "git://github.com/vim-scripts/Jinja.git"
 Bundle "git://github.com/altercation/vim-colors-solarized.git"
 Bundle "git://github.com/ervandew/supertab.git"
+"Bundle "git://github.com/klen/python-mode.git"
 
 " Config
 set nocompatible
@@ -270,7 +271,7 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 
 "nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 nnoremap <leader>s :SessionList<CR>
-nnoremap <leader>r :FufBuffer<CR>
+nnoremap <leader>r :CtrlPBuffer<CR>
 nnoremap <leader>q gqip
 nnoremap <leader>w <C-w>v<C-w>l
 
@@ -293,3 +294,10 @@ au BufNewFile,BufRead *.less set filetype=less
 nnoremap <leader>1 yypVr=
 nnoremap <leader>2 yypVr-
 nnoremap <leader>3 I### <ESC>
+
+" Python Mode Klen
+let g:pymode_run = 1
+let g:pymode_run_key = '<leader>c'
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_print_as_function = 1
